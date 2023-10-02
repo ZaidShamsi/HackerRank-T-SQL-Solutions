@@ -1,1 +1,1 @@
-select * from city
+select * from city where countrycode = 'JPN'
