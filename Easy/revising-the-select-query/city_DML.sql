@@ -20,5 +20,10 @@ insert into city values(12, 'city_12', 'JPN', 'JPN_district_1', 110000);
 insert into city values(13, 'city_13', 'JPN', 'JPN_district_2', 120000);
 insert into city values(14, 'city_14', 'JPN', 'JPN_district_3', 130000);
 insert into city values(1661, 'city_1661', 'JPN', 'JPN_district_4', 140000);
+insert into city values(16, 'city_6', 'USA', 'California', 100000);
+insert into city values(17, 'city_7', 'USA', 'California', 110000);
+insert into city values(18, 'city_8', 'USA', 'California', 120000);
+insert into city values(19, 'city_9', 'USA', 'California', 130000);
+insert into city values(20, 'city_10', 'USA', 'California', 140000);
 
 select * from city;

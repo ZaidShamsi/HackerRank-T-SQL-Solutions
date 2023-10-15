@@ -1,21 +1,24 @@
-# Japanese Cities' Names
-In this challenge, you will query a list of all the Japanese cities' names.
+# African Cities
+
+Query the data for all American cities with populations larger than 100,000.
 
 ## Problem
-Link to HackerRank Challenge: [Japanese Cities' Names](https://www.hackerrank.com/challenges/japanese-cities-name/problem)
+Link to HackerRank Challenge: [African Cities](https://www.hackerrank.com/challenges/african-cities/problem)
 
 ### Problem statement reproduced from HackerRank
-Query the names of all the Japanese cities in the CITY table. The COUNTRYCODE for Japan is JPN.
+Given the **CITY** and **COUNTRY** tables, query the names of all cities where the CONTINENT is 'Africa'.
 
-The CITY table is described as follows:
+**Note**: CITY.CountryCode and COUNTRY.Code are matching key columns.
 
-| Field | Type |
-| :----------- | :----------- |
-| id | int |
-| name | varchar(17) |
-| countrycode | varchar(3) |
-| district | varchar(20) |
-| population | int |
+The CITY and COUNTRY tables are described as follows:
+
+|    Field    |    Type     |
+| :---------- | :---------- |
+| id          | int         |
+| name        | varchar(17) |
+| countrycode | varchar(3)  |
+| district    | varchar(20) |
+| population  | int         |
 
 ### Understanding the solution
 
@@ -47,32 +50,19 @@ id|name|countrycode|district|population
 
 ### Expected output
 Expected output should contain:
-- only `name` of the city.
-- only JPN data: So, query should include `where` clause on `countrycode` column to filter out other countries data.
+- only USA data: So, query should include `where` clause on `countrycode` column to filter out other countries data
+- only cities with populations larger than 100000: So, `where` clause should also be applied on `population` column. Both of these conditions can be combined using `and` operator.
+- So, modified query is
 
-#### Intermediate query
 ```sql 
-select * from city where countrycode = 'JPN'
+select round(avg(population),0) as avg_population from city
 ```
 id|name|countrycode|district|population
 :---|:---|:---|:---|:---
-11|city_11|JPN|JPN_district_1|100000
-12|city_12|JPN|JPN_district_1|110000
-13|city_13|JPN|JPN_district_2|120000
-14|city_14|JPN|JPN_district_3|130000
-1661|city_1661|JPN|JPN_district_4|140000
-
-#### Final query
-```sql 
-select name from city where countrycode = 'JPN'
-```
-|name|
-|:---|
-|city_11|
-|city_12|
-|city_13|
-|city_14|
-|city_1661|
+7|city_7|USA|USA_district_1|110000
+8|city_8|USA|USA_district_2|120000
+9|city_9|USA|USA_district_3|130000
+10|city_10|USA|USA_district_4|140000
 
 ### Additional queries
 

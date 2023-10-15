@@ -1,11 +1,12 @@
-# Japanese Cities' Names
-In this challenge, you will query a list of all the Japanese cities' names.
+# Revising Aggregations - The Sum Function
+
+Query the data for all American cities with populations larger than 100,000.
 
 ## Problem
-Link to HackerRank Challenge: [Japanese Cities' Names](https://www.hackerrank.com/challenges/japanese-cities-name/problem)
+Link to HackerRank Challenge: [Revising Aggregations - The Sum Function](https://www.hackerrank.com/challenges/revising-aggregations-sum/problem)
 
 ### Problem statement reproduced from HackerRank
-Query the names of all the Japanese cities in the CITY table. The COUNTRYCODE for Japan is JPN.
+Query the total population of all cities in CITY where District is California.
 
 The CITY table is described as follows:
 
@@ -47,36 +48,23 @@ id|name|countrycode|district|population
 
 ### Expected output
 Expected output should contain:
-- only `name` of the city.
-- only JPN data: So, query should include `where` clause on `countrycode` column to filter out other countries data.
+- only USA data: So, query should include `where` clause on `countrycode` column to filter out other countries data
+- only cities with populations larger than 100000: So, `where` clause should also be applied on `population` column. Both of these conditions can be combined using `and` operator.
+- So, modified query is
 
-#### Intermediate query
 ```sql 
-select * from city where countrycode = 'JPN'
+select sum(population) from city where district = 'California'
 ```
 id|name|countrycode|district|population
 :---|:---|:---|:---|:---
-11|city_11|JPN|JPN_district_1|100000
-12|city_12|JPN|JPN_district_1|110000
-13|city_13|JPN|JPN_district_2|120000
-14|city_14|JPN|JPN_district_3|130000
-1661|city_1661|JPN|JPN_district_4|140000
-
-#### Final query
-```sql 
-select name from city where countrycode = 'JPN'
-```
-|name|
-|:---|
-|city_11|
-|city_12|
-|city_13|
-|city_14|
-|city_1661|
+7|city_7|USA|USA_district_1|110000
+8|city_8|USA|USA_district_2|120000
+9|city_9|USA|USA_district_3|130000
+10|city_10|USA|USA_district_4|140000
 
 ### Additional queries
 
-- DDL Query to create `hackerrank_db` and `city` table: [hackerrank_DDL.sql](../revising-the-select-query/hackerrank_DDL.sql)
-- DML Query to insert data into `city` table: [city_DML.sql](../revising-the-select-query/city_DML.sql)
+- DDL Query to create `hackerrank_db` and `city` table: [hackerrank_DDL.sql](hackerrank_DDL.sql)
+- DML Query to insert data into `city` table: [city_DML.sql](city_DML.sql)
 
 

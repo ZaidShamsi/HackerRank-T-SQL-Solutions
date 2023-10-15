@@ -1,0 +1,1 @@
+select round(avg(population),0) as avg_population from city

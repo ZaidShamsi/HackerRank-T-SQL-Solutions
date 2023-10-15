@@ -55,7 +55,7 @@ select * from city
 
 ### Additional queries
 
-- DDL Query to create `hackerrank_db` and `city` table: [hackerrank_DDL.sql](hackerrank_DDL.sql)
-- DML Query to insert data into `city` table: [city_DML.sql](city_DML.sql)
+- DDL Query to create `hackerrank_db` and `city` table: [hackerrank_DDL.sql](../revising-the-select-query/hackerrank_DDL.sql)
+- DML Query to insert data into `city` table: [city_DML.sql](../revising-the-select-query/city_DML.sql)
 
 
